@@ -1,0 +1,26 @@
+module tb;
+	string str;
+	int a;
+	initial begin
+		repeat(10) begin
+			a=$urandom_range(65,100);
+			str=string'(a);
+			$display("str=%0s",str);
+		end
+	end
+endmodule
+
+// Error (suppressible): (vsim-7070) Assigning a packed type 'reg signed[31:0]' to a string requires a cast.
+
+//# str=5$
+
+//# str=A
+//# str=K
+//# str=K
+//# str=[
+//# str=W
+//# str=K
+//# str=W
+//# str=c
+//# str=L
+//# str=K
